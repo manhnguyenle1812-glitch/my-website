@@ -72,9 +72,48 @@
   </style>
 </head>
 <body>
+
+  <!-- Ảnh nền + map -->
+  <img src="images/background.jpg" usemap="#bgmap" class="bg">
+
+  <!-- Vùng click xác định theo pixel -->
+  <map name="bgmap">
+    <!-- Hình chữ nhật (x1,y1,x2,y2) -->
+    <area shape="rect" coords="100,150,300,300" href="#" onclick="openPopup()">
+    <!-- Ví dụ thêm hình tròn -->
+    <!-- <area shape="circle" coords="500,200,80" href="#" onclick="openPopup()"> -->
+  </map>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+  <!-- Popup -->
+  <div class="popup" id="myPopup">
+    <h2>Thông tin cá nhân</h2>
+    <p>Xin chào, mình là M 👋</p>
+    <p>Bạn vừa click vào vùng được đánh dấu trên ảnh nền.</p>
+    <button class="close-btn" onclick="closePopup()">Đóng</button>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById("myPopup").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+    }
+    function closePopup() {
+      document.getElementById("myPopup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+
+</body>
+
+</head>
+<body>
   <h1>Welcome to my website!</h1>
 </body>
 </html>
+
 
 
 
