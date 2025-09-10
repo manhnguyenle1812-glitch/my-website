@@ -17,7 +17,7 @@
 
     h1 {
       position: absolute;
-      bottom: 40px;
+      top: 40px;
       left: 50%;
       transform: translateX(-50%);
       color: white;
@@ -27,13 +27,13 @@
     /* Vùng click trong suốt */
     .click-area {
       position: absolute;
-      top: 200px;   /* toạ độ Y (từ trên xuống) */
-      left: 300px;  /* toạ độ X (từ trái qua) */
-      width: 150px; /* chiều rộng vùng click */
-      height: 150px;/* chiều cao vùng click */
+      top: 37.5%;   /* toạ độ Y (từ trên xuống) */
+      left: 24.25%;  /* toạ độ X (từ trái qua) */
+      width: 17.75%; /* chiều rộng vùng click */
+      height: 38.5%;/* chiều cao vùng click */
       cursor: pointer;
-      background: rgba(255, 255, 255, 0.2); /* tạm để thấy vùng */
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0); /* tạm để thấy vùng */
+      clip-path: polygon(0% 29%, 76% 0%, 100% 64%, 27% 100%);   border-radius: 12px;
     }
 
     /* Popup */
@@ -87,10 +87,10 @@
 
   <!-- Popup -->
   <div class="popup" id="myPopup">
-    <h2>Thông tin cá nhân</h2>
-    <p>Xin chào, mình là M 👋</p>
-    <p>Bạn vừa click vào vùng được đánh dấu trên ảnh nền.</p>
-    <button class="close-btn" onclick="closePopup()">Đóng</button>
+    <h2>Hi there!</h2>
+    <p>My name is Sylent 👋</p>
+    <p>???WHat should I put here???</p>
+    <button class="close-btn" onclick="closePopup()">Close</button>
   </div>
 
   <h1>Welcome to my website!</h1>
@@ -108,3 +108,4 @@
 
 </body>
 </html>
+
