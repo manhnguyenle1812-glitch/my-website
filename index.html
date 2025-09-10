@@ -6,28 +6,34 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
-      min-height: 400px;
-      font-family: Arial, sans-serif;
-
-      /* Ảnh nền */
+      height: 100vh;
       background-image: url('images/background.jpg');
-      background-size: cover;       /* Ảnh phủ toàn màn hình */
-      background-position: center;  /* Canh giữa ảnh */
-      background-attachment: fixed; /* Ảnh đứng yên khi cuộn */
+      background-size: cover;        /* Ảnh phủ full màn hình */
+      background-position: center;   /* Canh giữa */
+      background-repeat: no-repeat;  /* Không lặp ảnh */
+      position: relative;
+      font-family: Arial, sans-serif;
     }
 
     h1 {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
       color: white;
-      text-align: center;
-      padding-top: 50px;
-      text-shadow: 2px 2px 5px black; /* Bóng chữ để dễ đọc */
+      text-shadow: 2px 2px 5px black;
     }
-     /* Ảnh nền full width */
-    .bg {
-      width: 100%;
-      height: auto;
-      display: block;
+
+    /* Vùng click trong suốt */
+    .click-area {
+      position: absolute;
+      top: 200px;   /* toạ độ Y (từ trên xuống) */
+      left: 300px;  /* toạ độ X (từ trái qua) */
+      width: 150px; /* chiều rộng vùng click */
+      height: 150px;/* chiều cao vùng click */
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.2); /* tạm để thấy vùng */
+      border-radius: 12px;
     }
 
     /* Popup */
@@ -61,7 +67,7 @@
       cursor: pointer;
     }
 
-    /* Overlay mờ phía sau popup */
+    /* Overlay mờ */
     .overlay {
       display: none;
       position: fixed;
@@ -73,16 +79,8 @@
 </head>
 <body>
 
-  <!-- Ảnh nền + map -->
-  <img src="images/background.jpg" usemap="#bgmap" class="bg">
-
-  <!-- Vùng click xác định theo pixel -->
-  <map name="bgmap">
-    <!-- Hình chữ nhật (x1,y1,x2,y2) -->
-    <area shape="rect" coords="100,150,300,300" href="#" onclick="openPopup()">
-    <!-- Ví dụ thêm hình tròn -->
-    <!-- <area shape="circle" coords="500,200,80" href="#" onclick="openPopup()"> -->
-  </map>
+  <!-- Vùng click -->
+  <div class="click-area" onclick="openPopup()"></div>
 
   <!-- Overlay -->
   <div class="overlay" id="overlay" onclick="closePopup()"></div>
@@ -94,6 +92,8 @@
     <p>Bạn vừa click vào vùng được đánh dấu trên ảnh nền.</p>
     <button class="close-btn" onclick="closePopup()">Đóng</button>
   </div>
+
+  <h1>Welcome to my website!</h1>
 
   <script>
     function openPopup() {
@@ -107,19 +107,4 @@
   </script>
 
 </body>
-
-</head>
-<body>
-  <h1>Welcome to my website!</h1>
-</body>
 </html>
-
-
-
-
-
-
-
-
-
-
