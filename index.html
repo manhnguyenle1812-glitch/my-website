@@ -5,19 +5,27 @@
   <title>My Website</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
+
+      /* Ảnh nền */
+      background-image: url('images/background.jpg');
+      background-size: cover;       /* Ảnh phủ toàn màn hình */
+      background-position: center;  /* Canh giữa ảnh */
+      background-attachment: fixed; /* Ảnh đứng yên khi cuộn */
     }
-    h1 { color: #2c3e50; }
-    p { color: #555; }
+
+    h1 {
+      color: white;
+      text-align: center;
+      padding-top: 200px;
+      text-shadow: 2px 2px 5px black; /* Bóng chữ để dễ đọc */
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome!</h1>
-  <p>This page is currently empty.</p>
+  <h1>Welcome</h1>
 </body>
 </html>
-
-
-
